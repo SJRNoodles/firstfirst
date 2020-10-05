@@ -22,6 +22,7 @@ var laver = 0;
 var obs = 0;
 var met = 0;
 var sand = 0;
+var mud = 0;
 
 function add(id){
 clickSound.play(); 
@@ -55,7 +56,7 @@ document.getElementById("cb").disabled = false;
 
 function cb(){
 
-if (document.getElementById("equ").innerHTML == "fiarewatery" || document.getElementById("equ").innerHTML == "wateryfiare"){
+if (document.getElementById("equ").innerHTML == "fiareeartho" || document.getElementById("equ").innerHTML == "earthofiare"){
  if(laver == 0){
  laver = 1;
 combined = 1;
@@ -63,7 +64,7 @@ document.getElementById("equ").innerHTML = "new element! laver!";
 document.getElementById("cb").disabled = true;
 
 var btn = document.createElement("BUTTON");
-  btn.innerHTML = "Laver";
+  btn.innerHTML = "^o^";
   btn.id="laver";
   btn.onclick=function() {add(this.id)}
   document.body.appendChild(btn);
@@ -78,7 +79,7 @@ document.getElementById("equ").innerHTML = "new element! rocker!";
 document.getElementById("cb").disabled = true;
 
 var btn = document.createElement("BUTTON");
-  btn.innerHTML = "Rocker";
+  btn.innerHTML = "^o^";
   btn.id="rocker";
   btn.onclick=function() {add(this.id)}
   document.body.appendChild(btn);
@@ -93,7 +94,7 @@ document.getElementById("equ").innerHTML = "new element! metaco!";
 document.getElementById("cb").disabled = true;
 
 var btn = document.createElement("BUTTON");
-  btn.innerHTML = "Metaco";
+  btn.innerHTML = "^o^";
   btn.id="metaco";
   btn.onclick=function() {add(this.id)}
   document.body.appendChild(btn);
@@ -108,8 +109,23 @@ document.getElementById("equ").innerHTML = "new element! sandier!";
 document.getElementById("cb").disabled = true;
 
 var btn = document.createElement("BUTTON");
-  btn.innerHTML = "Sandier";
+  btn.innerHTML = "^o^";
   btn.id="sandier";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+  }
+}
+
+if (document.getElementById("equ").innerHTML == "earthowatery" || document.getElementById("equ").innerHTML == "wateryeartho"){
+ if(mud == 0){
+ mud = 1;
+combined = 1;
+document.getElementById("equ").innerHTML = "new element! muddo!";
+document.getElementById("cb").disabled = true;
+
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^o^";
+  btn.id="muddo";
   btn.onclick=function() {add(this.id)}
   document.body.appendChild(btn);
   }
@@ -137,13 +153,84 @@ body{
 font-family:Arial;
 background-color:#ddd;
 }
+
+button {
+    background-color: #e4e4e4;
+    border: #999898 3px solid;
+    border-radius: 3px;
+    padding: 10px;
+    margin-right: 5px;
+    text-align:center;
+    transition-duration:0.3s;
+    font-size:50px;
+}
+
+button:hover {
+    background-color: #e4e4e4;
+    border: #fff 1px solid !important;
+    border-radius: 5px;
+    padding: 5px;
+    transition-duration:0.3s;
+    font-size:50px;
+}
+
+#fiare{
+background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/fire.svg) no-repeat;
+background-size: 100%;
+border:none;
+}
+
+#watery{
+background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/water.svg) no-repeat 0px -8px;
+border:none;
+background-size: 100%;
+}
+
+#eartho{
+background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/earth.svg) no-repeat 0px;
+border:none;
+background-size: 100%;
+}
+
+#muddo{
+background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/mud.svg) no-repeat 0px;
+border:none;
+background-size: 100%;
+}
+
+#laver{
+background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/lava.svg) no-repeat 0px;
+border:none;
+background-size: 100%;
+}
+
+#rocker{
+background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/rock.svg) no-repeat 0px;
+border:none;
+background-size: 100%;
+}
+
+#sandier{
+background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/sand.svg) no-repeat 0px;
+border:none;
+background-size: 100%;
+}
+
+#metaco{
+background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/metal.svg) no-repeat 0px;
+border:none;
+background-size: 100%;
+}
 </style>
 
-<head><h2>firstfirst</h2></head>
+<head><h1>firstfirst</h1></head>
 <hr>
 <p id="equ"></p> <button type="button" onclick="cb()" id="cb" disabled>combine</button>
-<button type="button" id="fiare" onclick="add(this.id)">Fiare</button>
-<button type="button" id="watery" onclick="add(this.id)">Watery</button>
+
+<button type="button" id="fiare" onclick="add(this.id)">^o^</button>
+<button type="button" id="eartho" onclick="add(this.id)">^o^</button>
+<button type="button" id="watery" onclick="add(this.id)">^o^</button>
+
 
 
 

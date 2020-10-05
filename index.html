@@ -23,6 +23,7 @@ var obs = 0;
 var met = 0;
 var sand = 0;
 var mud = 0;
+var rus = 0;
 
 function add(id){
 clickSound.play(); 
@@ -131,6 +132,21 @@ var btn = document.createElement("BUTTON");
   }
 }
 
+if (document.getElementById("equ").innerHTML == "metacowatery" || document.getElementById("equ").innerHTML == "waterymetaco"){
+ if(rus == 0){
+ rus = 1;
+combined = 1;
+document.getElementById("equ").innerHTML = "new element! rustear!";
+document.getElementById("cb").disabled = true;
+
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^-^";
+  btn.id="rustear";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+  }
+}
+
 item1=0;
 item2=0;
 limit=0;
@@ -218,6 +234,12 @@ background-size: 100%;
 
 #metaco{
 background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/metal.svg) no-repeat 0px;
+border:none;
+background-size: 100%;
+}
+
+#rustear{
+background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/rust.svg) no-repeat 0px;
 border:none;
 background-size: 100%;
 }

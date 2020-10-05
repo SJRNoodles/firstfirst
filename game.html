@@ -1,5 +1,18 @@
 <html>
+
+<audio id="click">
+  <source src="https://raw.githubusercontent.com/SJRNoodles/firstfirst/main/sounds/click.wav" type="audio/wav">
+</audio>
+
+<audio id="discov">
+  <source src="https://raw.githubusercontent.com/SJRNoodles/firstfirst/main/sounds/discover.wav" type="audio/wav">
+</audio>
+
+
 <script>
+var clickSound = document.getElementById("click"); 
+var discoverSound = document.getElementById("discov"); 
+
 var limit = 0;
 var item1 = 0;
 var item2 = 0;
@@ -11,6 +24,10 @@ var met = 0;
 var sand = 0;
 
 function add(id){
+clickSound.play(); 
+
+
+
 if (item1 == 0) {
 item1 = id;
 }else{
@@ -32,7 +49,6 @@ document.getElementById("cb").disabled = false;
 if (limit >= 2) {
 document.getElementById("cb").disabled = false;
 }
-
 }
 
 // Combining
@@ -106,6 +122,8 @@ limit=0;
 if (combined == 0){
 document.getElementById("equ").innerHTML = "nothing.";
 document.getElementById("cb").disabled = true;
+}else{
+discoverSound.play(); 
 }
 
 combined = 0;

@@ -146,6 +146,21 @@ var btn = document.createElement("BUTTON");
   document.body.appendChild(btn);
   }
 }
+  
+  if (document.getElementById("equ").innerHTML == "fiaresandier" || document.getElementById("equ").innerHTML == "sandierfiare"){
+ if(rus == 0){
+ rus = 1;
+combined = 1;
+document.getElementById("equ").innerHTML = "new element! glasso!";
+document.getElementById("cb").disabled = true;
+
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^-^";
+  btn.id="glasso";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+  }
+}
 
 item1=0;
 item2=0;
@@ -240,6 +255,12 @@ background-size: 100%;
 
 #rustear{
 background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/rust.svg) no-repeat 0px;
+border:none;
+background-size: 100%;
+}
+  
+#glasso{
+background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/glass.svg) no-repeat 0px;
 border:none;
 background-size: 100%;
 }

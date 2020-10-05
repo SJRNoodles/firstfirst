@@ -1,0 +1,132 @@
+<html>
+<script>
+var limit = 0;
+var item1 = 0;
+var item2 = 0;
+var combined = 0;
+
+var laver = 0;
+var obs = 0;
+var met = 0;
+var sand = 0;
+
+function add(id){
+if (item1 == 0) {
+item1 = id;
+}else{
+if (item2 == 0) {
+item2 = id;
+}
+}
+
+
+limit = limit + 1;
+if (limit <= 2) {
+document.getElementById("cb").disabled = true;
+document.getElementById("equ").innerHTML = item1 + item2;
+}else{
+document.getElementById("cb").disabled = false;
+}
+
+
+if (limit >= 2) {
+document.getElementById("cb").disabled = false;
+}
+
+}
+
+// Combining
+
+function cb(){
+
+if (document.getElementById("equ").innerHTML == "fiarewatery" || document.getElementById("equ").innerHTML == "wateryfiare"){
+ if(laver == 0){
+ laver = 1;
+combined = 1;
+document.getElementById("equ").innerHTML = "new element! laver!";
+document.getElementById("cb").disabled = true;
+
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "Laver";
+  btn.id="laver";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+  }
+}
+
+if (document.getElementById("equ").innerHTML == "laverwatery" || document.getElementById("equ").innerHTML == "waterylaver"){
+ if(obs == 0){
+ obs = 1;
+combined = 1;
+document.getElementById("equ").innerHTML = "new element! rocker!";
+document.getElementById("cb").disabled = true;
+
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "Rocker";
+  btn.id="rocker";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+  }
+}
+
+if (document.getElementById("equ").innerHTML == "fiarerocker" || document.getElementById("equ").innerHTML == "rockerfiare"){
+ if(met == 0){
+ met = 1;
+combined = 1;
+document.getElementById("equ").innerHTML = "new element! metaco!";
+document.getElementById("cb").disabled = true;
+
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "Metaco";
+  btn.id="metaco";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+  }
+}
+
+if (document.getElementById("equ").innerHTML == "rockerwatery" || document.getElementById("equ").innerHTML == "wateryrocker"){
+ if(sand == 0){
+ sand = 1;
+combined = 1;
+document.getElementById("equ").innerHTML = "new element! sandier!";
+document.getElementById("cb").disabled = true;
+
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "Sandier";
+  btn.id="sandier";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+  }
+}
+
+item1=0;
+item2=0;
+limit=0;
+
+if (combined == 0){
+document.getElementById("equ").innerHTML = "nothing.";
+document.getElementById("cb").disabled = true;
+}
+
+combined = 0;
+
+}
+
+</script>
+
+<style>
+body{
+font-family:Arial;
+background-color:#ddd;
+}
+</style>
+
+<head><h2>firstfirst</h2></head>
+<hr>
+<p id="equ"></p> <button type="button" onclick="cb()" id="cb" disabled>combine</button>
+<button type="button" id="fiare" onclick="add(this.id)">Fiare</button>
+<button type="button" id="watery" onclick="add(this.id)">Watery</button>
+
+
+
+</html>

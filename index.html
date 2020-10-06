@@ -25,6 +25,7 @@ var sand = 0;
 var mud = 0;
 var rus = 0;
 var gla = 0;
+var ste = 0;
 
 function add(id){
 clickSound.play(); 
@@ -162,6 +163,21 @@ var btn = document.createElement("BUTTON");
   document.body.appendChild(btn);
   }
 }
+  
+if (document.getElementById("equ").innerHTML == "fiarewatery" || document.getElementById("equ").innerHTML == "wateryfiare"){
+ if(ste == 0){
+ ste = 1;
+combined = 1;
+document.getElementById("equ").innerHTML = "new element! steair!";
+document.getElementById("cb").disabled = true;
+
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^-^";
+  btn.id="steair";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+  }
+}
 
 item1=0;
 item2=0;
@@ -262,6 +278,12 @@ background-size: 100%;
   
 #glasso{
 background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/glass.svg) no-repeat 0px;
+border:none;
+background-size: 100%;
+}
+  
+#steair{
+background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/steam.svg) no-repeat 0px;
 border:none;
 background-size: 100%;
 }

@@ -26,6 +26,7 @@ var mud = 0;
 var rus = 0;
 var gla = 0;
 var ste = 0;
+var dus = 0;
 
 function add(id){
 clickSound.play(); 
@@ -178,6 +179,21 @@ var btn = document.createElement("BUTTON");
   document.body.appendChild(btn);
   }
 }
+  
+if (document.getElementById("equ").innerHTML == "steaireartho" || document.getElementById("equ").innerHTML == "earthosteair"){
+ if(dus == 0){
+ dus = 1;
+combined = 1;
+document.getElementById("equ").innerHTML = "new element! dusten!";
+document.getElementById("cb").disabled = true;
+
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^o^";
+  btn.id="dusten";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+  }
+}
 
 item1=0;
 item2=0;
@@ -284,6 +300,12 @@ background-size: 100%;
   
 #steair{
 background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/steam.svg) no-repeat 0px;
+border:none;
+background-size: 100%;
+}
+  
+  #dusten{
+background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/dust.svg) no-repeat 0px;
 border:none;
 background-size: 100%;
 }

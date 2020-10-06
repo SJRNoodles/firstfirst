@@ -14,8 +14,8 @@ var clickSound = document.getElementById("click");
 var discoverSound = document.getElementById("discov"); 
 
 var limit = 0;
-var item1 = 0;
-var item2 = 0;
+var item1 = "";
+var item2 = "";
 var combined = 0;
 
 var laver = 0;
@@ -33,10 +33,10 @@ clickSound.play();
 
 
 
-if (item1 == 0) {
+if (item1 == "") {
 item1 = id;
 }else{
-if (item2 == 0) {
+if (item2 == "") {
 item2 = id;
 }
 }
@@ -195,8 +195,8 @@ var btn = document.createElement("BUTTON");
   }
 }
 
-item1=0;
-item2=0;
+item1="";
+item2="";
 limit=0;
 
 if (combined == 0){
@@ -218,24 +218,30 @@ font-family:Arial;
 background-color:#ddd;
 }
 
+button:hover {
+    background-color: #e4e4e4;
+    border: #fff 5px solid !important;
+    border-radius: 100px;
+    padding: 5px;
+    transition-duration:0.5s;
+    font-size:50px;
+    border: 1px solid;
+  padding: 10px;
+  box-shadow: 2px 2px;
+}
+
 button {
     background-color: #e4e4e4;
-    border: #999898 3px solid;
-    border-radius: 3px;
-    padding: 10px;
-    margin-right: 5px;
-    text-align:center;
-    transition-duration:0.3s;
+    border: none !important;
+    border-radius: 0px;
+    padding: 5px;
+    transition-duration:0.5s;
     font-size:50px;
 }
 
-button:hover {
-    background-color: #e4e4e4;
-    border: #fff 1px solid !important;
-    border-radius: 5px;
-    padding: 5px;
-    transition-duration:0.3s;
-    font-size:50px;
+
+h1{
+text-align: center;
 }
 
 #fiare{
@@ -245,9 +251,9 @@ border:none;
 }
 
 #watery{
-background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/water.svg) no-repeat 0px -8px;
+background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/water.svg) no-repeat 10px -3px;
 border:none;
-background-size: 100%;
+background-size: 70%;
 }
 
 #eartho{
@@ -311,9 +317,9 @@ background-size: 100%;
 }
 </style>
 
-<head><h1>firstfirst</h1></head>
+<head><h1><p id="equ">firstfirst</p></h1></head>
 <hr>
-<p id="equ"></p> <button type="button" onclick="cb()" id="cb" disabled>combine</button>
+ <button type="button" onclick="cb()" id="cb" disabled>combine</button>
 
 <button type="button" id="fiare" onclick="add(this.id)">^o^</button>
 <button type="button" id="eartho" onclick="add(this.id)">^o^</button>
@@ -323,3 +329,4 @@ background-size: 100%;
 
 
 </html>
+

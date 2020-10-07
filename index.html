@@ -10,6 +10,9 @@
 
 
 <script>
+  
+
+  
 var clickSound = document.getElementById("click"); 
 var discoverSound = document.getElementById("discov"); 
 
@@ -28,6 +31,105 @@ var gla = 0;
 var ste = 0;
 var dus = 0;
 
+  function Save(){
+ localStorage.setItem("laver",laver);
+ localStorage.setItem("obs",obs);
+ localStorage.setItem("met",met);
+  localStorage.setItem("sand",sand);
+  localStorage.setItem("mud",mud);
+  localStorage.setItem("rus",rus);
+  localStorage.setItem("gla",gla);
+  localStorage.setItem("ste",ste);
+  localStorage.setItem("dus",dus);
+}
+  
+function Load(){
+ laver = 0;
+ obs = 0;
+ met = 0;
+ sand = 0;
+ mud = 0;
+ rus = 0;
+ gla = 0;
+ ste = 0;
+ dus = 0;
+  
+laver = localStorage.getItem("laver");
+obs = localStorage.getItem("obs");
+met = localStorage.getItem("met");
+sand = localStorage.getItem("sand");
+mud = localStorage.getItem("mud");
+rus = localStorage.getItem("rus");
+gla = localStorage.getItem("gla");
+ste = localStorage.getItem("ste");
+dus = localStorage.getItem("dus");
+
+if(laver == 1){
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^o^";
+  btn.id="laver";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+}
+if(obs == 1){
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^o^";
+  btn.id="rocker";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+}
+if(met == 1){
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^o^";
+  btn.id="metaco";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+}
+if(sand == 1){
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^o^";
+  btn.id="sandier";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+}
+if(mud == 1){
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^o^";
+  btn.id="muddo";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+}
+if(rus == 1){
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^-^";
+  btn.id="rustear";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+}
+if(gla == 1){
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^o^";
+  btn.id="glasso";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+}
+if(ste == 1){
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^-^";
+  btn.id="steair";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+}
+if(dus == 1){
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^o^";
+  btn.id="dusten";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+}
+  
+}
+  
 function add(id){
 clickSound.play(); 
 
@@ -318,6 +420,8 @@ background-size: 100%;
 </style>
 
 <head><h1><p id="equ">firstfirst</p></h1></head>
+<button type="button" onclick="Save()">Save</button>
+<button type="button" onclick="Load()">Load</button>
 <hr>
  <button type="button" onclick="cb()" id="cb" disabled>combine</button>
 

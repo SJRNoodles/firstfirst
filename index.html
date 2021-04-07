@@ -21,6 +21,7 @@ var item1 = "";
 var item2 = "";
 var combined = 0;
 
+var sea = 0;
 var laver = 0;
 var obs = 0;
 var met = 0;
@@ -32,6 +33,7 @@ var ste = 0;
 var dus = 0;
 
   function Save(){
+    localStorage.setItem("sea",sea);
  localStorage.setItem("laver",laver);
  localStorage.setItem("obs",obs);
  localStorage.setItem("met",met);
@@ -44,6 +46,7 @@ var dus = 0;
 }
   
 function Load(){
+ sea = 0;
  laver = 0;
  obs = 0;
  met = 0;
@@ -63,11 +66,19 @@ rus = localStorage.getItem("rus");
 gla = localStorage.getItem("gla");
 ste = localStorage.getItem("ste");
 dus = localStorage.getItem("dus");
+sea = localStorage.getItem("sea");
 
 if(laver == 1){
 var btn = document.createElement("BUTTON");
   btn.innerHTML = "^o^";
   btn.id="laver";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+}
+if(sea == 1){
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^o^";
+  btn.id="seasou";
   btn.onclick=function() {add(this.id)}
   document.body.appendChild(btn);
 }
@@ -176,7 +187,20 @@ var btn = document.createElement("BUTTON");
   document.body.appendChild(btn);
   }
 }
+if (document.getElementById("equ").innerHTML == "waterywatery"){
+  if(laver == 0){
+ laver = 1;
+combined = 1;
+document.getElementById("equ").innerHTML = "new element! seasou!";
+document.getElementById("cb").disabled = true;
 
+var btn = document.createElement("BUTTON");
+  btn.innerHTML = "^o^";
+  btn.id="seasou";
+  btn.onclick=function() {add(this.id)}
+  document.body.appendChild(btn);
+  }
+}
 if (document.getElementById("equ").innerHTML == "laverwatery" || document.getElementById("equ").innerHTML == "waterylaver"){
  if(obs == 0){
  obs = 1;
@@ -408,6 +432,11 @@ background-size: 100%;
   
 #steair{
 background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/steam.svg) no-repeat 0px;
+border:none;
+background-size: 100%;
+}
+  #seasou{
+background:url(https://github.com/SJRNoodles/firstfirst/raw/main/svg/sea.svg) no-repeat 0px;
 border:none;
 background-size: 100%;
 }
